@@ -8,7 +8,7 @@ class Zsh < Formula
 
   depends_on 'gdbm'
   depends_on 'pcre'
-  depends_on 'waltarix/customs/ncurses'
+  depends_on 'ncurses'
 
   option 'disable-etcdir', 'Disable the reading of Zsh rc files in /etc'
 
@@ -34,6 +34,7 @@ class Zsh < Formula
       --with-tcsetpgrp
       --enable-locale
       --with-term-lib=ncursesw
+      zsh_cv_c_broken_wcwidth=yes
     ]
 
     args << '--disable-etcdir' if build.include? 'disable-etcdir'
